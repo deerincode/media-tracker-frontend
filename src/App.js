@@ -1,22 +1,20 @@
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import './App.css'
+import AllMedia from './components/AllMedia'
+import Movies from './components/Movies';
+import Videogames from './components/Videogames';
+import VideogameEntry from './components/VideogameEntry'
+import MovieEntry from './components/MovieEntry'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Media List
+      <Router>
+        <Routes>
+          <Route path='/' element={<AllMedia />}/>
+        </Routes>
+      </Router>
     </div>
   );
 }

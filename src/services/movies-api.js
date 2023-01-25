@@ -1,6 +1,7 @@
 // Movie endpoints
 import axios from "axios";
-const baseURL = 'https://localhost:3001/movies'
+// const baseURL = 'https://localhost:3001/movies'
+const baseURL = 'http://localhost:3001/movies/'
 
 // Show all
 export const getMovies = () => {

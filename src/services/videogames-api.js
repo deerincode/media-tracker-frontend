@@ -1,6 +1,6 @@
 // Videogame endpoints
 import axios from "axios";
-const baseURL = 'https://localhost:3001/videogames'
+const baseURL = 'http://localhost:3001/videogames'
 
 // Show all
 export const getVideogames = () => {
