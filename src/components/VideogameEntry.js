@@ -1,4 +1,4 @@
-import { useSate, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getVideogame, deleteVideogame } from '../services/videogames-api'
 

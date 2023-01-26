@@ -1,4 +1,4 @@
-import { useSate, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getMovie, deleteMovie } from '../services/movies-api'
 
@@ -11,10 +11,10 @@ export default function Movie() {
         .then(res => setMovie(res.data))
     },[])
 
-    // const deleteMovie = () => {
-    //     deleteMovie(id)
-    //     nav('/') // back to main screen
-    // }
+    const deleteTheMovie = () => {
+        deleteMovie(id)
+        nav('/') // back to main screen
+    }
 
     return(
         <div>
@@ -23,6 +23,8 @@ export default function Movie() {
             <h4>{movie.directors}</h4>
             <h5>{movie.review}</h5>
             Add indicator of if movie has been watched!!!
+            <button onClick={() => {nav(`/${id}/edit`)}}>Edit</button>
+            <button onClick={deleteTheMovie}>Delete</button>
         </div>
     )
 }
