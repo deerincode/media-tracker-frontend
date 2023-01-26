@@ -15,8 +15,8 @@ export default function Movies() {
                 {movies.map((movie) =>{
                     return (
                         <div>
-                            <h5><Link to={`/${movie._id}`}>{movie.title}
-                            </Link></h5>
+                            <h4><Link to={`/movies/${movie._id}`}>{movie.title}
+                            </Link></h4>
                         </div>
                     )
                 })}

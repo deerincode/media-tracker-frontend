@@ -3,8 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { getMovie, deleteMovie } from '../services/movies-api'
 
 export default function Movie() {
-    const nav = useNavigate() // return to main page
-    const {id} = useParams() // destructuring id param for use
+    const nav = useNavigate()
+    const {id} = useParams() 
     const [movie, setMovie] = useState({})
     useEffect(() => {
         getMovie(id) // grabs the specific Movie from the api using the id
@@ -13,18 +13,24 @@ export default function Movie() {
 
     const deleteTheMovie = () => {
         deleteMovie(id)
-        nav('/') // back to main screen
+        nav('/movies/list') // navs back to Movie collection page
     }
 
     return(
         <div>
             <h1>{movie.title}</h1>
             <h2>{movie.releaseyear}</h2>
-            <h4>{movie.directors}</h4>
-            <h5>{movie.review}</h5>
-            Add indicator of if movie has been watched!!!
-            <button onClick={() => {nav(`/${id}/edit`)}}>Edit</button>
-            <button onClick={deleteTheMovie}>Delete</button>
+            <h4>Directors: {movie.directors}</h4>
+            <h5>Review:</h5>{movie.review}
+            <h5>
+                Watched:<input type='checkbox' defaultChecked={movie.watched} disabled />
+            </h5>
+
+            <div>
+                <button onClick={() => { nav(`/movies/${id}/edit`) }}>Edit</button>
+                <button onClick={deleteTheMovie}>Delete</button>
+            </div>
+            
         </div>
     )
 }

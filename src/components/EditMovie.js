@@ -17,7 +17,7 @@ export default function EditMovie(){
         e.preventDefault()
         const updatedMovie = {title: e.target.title.value, releaseyear: e.target.releaseyear.value, directors: e.target.directors.value, review: e.target.review.value, watched: e.target.watched.checked}
         editMovie(id, updatedMovie)
-        nav(`/${id}`)
+        nav(`/movies/${id}`)
     }
 
     return(

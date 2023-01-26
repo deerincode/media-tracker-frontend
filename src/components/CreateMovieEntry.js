@@ -6,8 +6,9 @@ export default function CreateMovie() {
 
     const createTheMovie = (e) => {
         const movie = {title: e.target.title.value, releaseyear: e.target.releaseyear.value, directors: e.target.directors.value, review: e.target.review.value, watched: e.target.watched.checked}
+        
         createMovie(movie)
-        nav('/')
+        nav('/movies/list')
     }
 
     return(

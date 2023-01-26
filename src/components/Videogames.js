@@ -15,8 +15,10 @@ export default function Videogames() {
                 {videogames.map((videogame) =>{
                     return (
                         <div>
-                            <Link to={`/${videogame._id}`}>{videogame.title}
-                            </Link>
+                            <h4>
+                                <Link to={`/videogames/${videogame._id}`}>{videogame.title}
+                                </Link>
+                            </h4>
                         </div>
                     )
                 })}

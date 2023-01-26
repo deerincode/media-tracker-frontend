@@ -1,9 +1,7 @@
 import { useState, useEffect} from 'react'
-// import { Link } from 'react-router-dom'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { getMovies } from '../services/movies-api'
 import { getVideogames } from '../services/videogames-api'
-import CreateMovie from './CreateMovieEntry'
 
 export default function AllMedia() {
     const [movies, setMovies] = useState([])
@@ -20,22 +18,23 @@ export default function AllMedia() {
     console.log(videogames) // testing
     return(
         <div>
-            {/* <CreateMovie /> */}
+            <h3>~Movies~</h3>
             <ul>
                 {movies.map((movie) => {
                     return (
                         <div>
-                            <Link to={`/${movie._id}`}>{movie.title}
+                            <Link to={`/movies/${movie._id}`}>{movie.title}
                             </Link>
                         </div>
                     )
                 })}
             </ul>
+            <h3>**Videogames**</h3>
             <ul>
                 {videogames.map((videogame) => {
                     return (
                         <div>
-                            <Link to={`/${videogame._id}`}>{videogame.title}
+                            <Link to={`/videogames/${videogame._id}`}>{videogame.title}
                             </Link>
                         </div>
                     )
