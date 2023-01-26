@@ -1,6 +1,7 @@
 // Videogame endpoints
 import axios from "axios";
-const baseURL = 'http://localhost:3001/videogames'
+// const baseURL = 'http://localhost:3001/videogames' // For local/undeployed use
+const baseURL = 'https://vogue-mediatracker-backend.onrender.com/videogames'
 
 // Show all
 export const getVideogames = () => {

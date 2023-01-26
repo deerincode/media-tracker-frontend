@@ -1,6 +1,7 @@
 // Movie endpoints
 import axios from "axios";
-const baseURL = 'http://localhost:3001/movies/'
+// const baseURL = 'http://localhost:3001/movies/' // For local undeployed use
+const baseURL = 'https://vogue-mediatracker-backend.onrender.com/movies'
 
 // Show all
 export const getMovies = () => {
